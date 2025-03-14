@@ -14,10 +14,11 @@
 *{
 margin: 0px;
 padding: 0px;
+overflow: hidden;
 }
 #nav{
     background-color: #29292F;
-    background-image: linear-gradient(rgba());
+    background-image: linear-gradient(rgba(41, 41, 47,0.5), rgba(235, 234, 229,0.3));
     font-family: milker;
     color: #EBEAE5;
     display: flex;
@@ -27,11 +28,72 @@ padding: 0px;
     */
     justify-content: space-evenly;
     align-items: center;
-    height: 10vh;
+    height: 15vh;
     font-size: 200%;
+   
+}
+.navOpt{
+     transition: all 0.5s;
+}
+.navOpt:hover{
+    cursor: pointer;
+color: white;
+transform: scale(105%);
+text-shadow: 5px 5px 10px black;
+}
+#landingLayout{
+    height: 85vh;
+    background-color: #EBEAE5;
+    background-image: linear-gradient(to bottom left, rgba(41, 41, 47,0.5) 10%, rgba(235, 234, 229,0.3),  rgba(235, 234, 229,0.3));
 }
 #title{
     font-family: milker;
     font-size: 500%;
     text-align: center;
+    color: #29292F;
+    position: absolute;
+    left: 5vw;
+    top: 30vh;
+}
+#landingDescription{
+    font-family: mono;
+    color: #29292F;
+    width: 700px;
+    position: absolute;
+    left: 5vw;
+    top: 50vh;
+}
+
+#landingBTNs{/*maybe positions der BTNs anpassen*/
+display: flex;
+justify-content: space-evenly;
+width: 30vw;
+position: absolute;
+left: 5vw;
+bottom: 20vh;
+}
+.landingBTN{
+    width: 10vw;
+    height: max-content;
+    padding: 1vh 0;
+    border: 3px solid #29292F;
+    border-radius: 15px;
+    font-family: milker;
+    color: #29292F;
+    text-align: center;
+}
+#tutorialBTN{
+    background-color: #29292F;
+    color: #EBEAE5;
+}
+#landingVinyl{
+   height: 140vh;
+    position: absolute;
+    top: 25vh;
+    left: 50vw;
+    animation: rotation 6s linear infinite;
+}
+@keyframes rotation {
+    0%{transform: rotateZ(0deg);}
+    100%{transform: rotateZ(360deg);}
 }
