@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Milker;
+    src: url(fonts/Milker.otf);
+}
+@font-face {
+    font-family: Mono;
+    src: url(fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf);
+}
+@font-face {
+    font-family: Mono-Bold;
+    src: url(fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
+}
+
+:root{
+        --backgroundColor:#EBEAE5;
+        --secondColor:#29292F;
+        
+}
+
+
+*{
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+}
+body{
+    background-color: var(--backgroundColor);
+    color: var(--secondColor);
+    background-image: linear-gradient();
+}
+
+#headline{
+    font-family: milker;
+    text-align: center;
+font-size: 300%;
+}

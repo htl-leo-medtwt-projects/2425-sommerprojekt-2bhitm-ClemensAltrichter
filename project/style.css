@@ -11,16 +11,23 @@
     src: url(fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
 }
 
+:root{
+        --backgroundColor:#EBEAE5;
+        --secondColor:#29292F;
+        
+}
+
+
 *{
 margin: 0px;
 padding: 0px;
 overflow: hidden;
 }
 #nav{
-    background-color: #29292F;
+    background-color: var(--secondColor);
     background-image: linear-gradient(rgba(41, 41, 47,0.5), rgba(235, 234, 229,0.3));
     font-family: milker;
-    color: #EBEAE5;
+    color: var(--backgroundColor);
     display: flex;
     /*
     justify-content: center;
@@ -33,31 +40,33 @@ overflow: hidden;
    
 }
 .navOpt{
-     transition: all 0.5s;
+    padding: 10vh;
+     transition: all 0.3s;
 }
 .navOpt:hover{
     cursor: pointer;
 color: white;
 transform: scale(105%);
-text-shadow: 5px 5px 10px black;
+text-shadow: 5px 5px 1px black;
 }
 #landingLayout{
     height: 85vh;
-    background-color: #EBEAE5;
-    background-image: linear-gradient(to bottom left, rgba(41, 41, 47,0.5) 10%, rgba(235, 234, 229,0.3),  rgba(235, 234, 229,0.3));
+    background-color: var(--backgroundColor);
+    background-image: linear-gradient(to top right, rgba(41, 41, 47,0.5) 5%, rgba(235, 234, 229,0.3),  rgba(235, 234, 229,0.3));
+    /*background-image: linear-gradient(to bottom left, rgba(41, 41, 47,0.5) 10%, rgba(235, 234, 229,0.3),  rgba(235, 234, 229,0.3));*/
 }
 #title{
     font-family: milker;
     font-size: 500%;
     text-align: center;
-    color: #29292F;
+    color: var(--secondColor);
     position: absolute;
     left: 5vw;
     top: 30vh;
 }
 #landingDescription{
     font-family: mono;
-    color: #29292F;
+    color: var(--secondColor);
     width: 700px;
     position: absolute;
     left: 5vw;
@@ -65,6 +74,8 @@ text-shadow: 5px 5px 10px black;
 }
 
 #landingBTNs{/*maybe positions der BTNs anpassen*/
+    padding-bottom: 4vh;
+    padding-top: 4vh;
 display: flex;
 justify-content: space-evenly;
 width: 30vw;
@@ -76,15 +87,31 @@ bottom: 20vh;
     width: 10vw;
     height: max-content;
     padding: 1vh 0;
-    border: 3px solid #29292F;
-    border-radius: 15px;
+    border: 3px solid var(--secondColor);
+    border-radius: 10px;
     font-family: milker;
-    color: #29292F;
+    color: var(--secondColor);
     text-align: center;
+    transition: all 0.5s;
 }
 #tutorialBTN{
-    background-color: #29292F;
-    color: #EBEAE5;
+    background-color: var(--secondColor);
+    color: var(--backgroundColor);
+    transition: all 0.5s;
+}
+.landingBTN:hover{ /*maybe Border weg*/
+    scale: 105%;
+    box-shadow: 7px 9px 10px black;
+    border: 3px solid var(--backgroundColor);
+    color: var(--backgroundColor);
+    background-color: var(--secondColor);
+}
+#tutorialBTN:hover{/*same*/
+    scale: 105%;
+    box-shadow: 7px 9px 10px black;
+    border: 3px solid var(--secondColor);
+    color: var(--secondColor);
+    background-color: var(--backgroundColor);
 }
 #landingVinyl{
    height: 140vh;
