@@ -16,7 +16,10 @@
         --secondColor:#29292F;
         
 }
-
+a{
+    text-decoration: none;
+    padding: 4vh;
+}
 
 *{
 margin: 0px;
@@ -33,4 +36,8 @@ body{
     font-family: milker;
     text-align: center;
 font-size: 300%;
+}
+
+img{
+    width: 30vw;
 }

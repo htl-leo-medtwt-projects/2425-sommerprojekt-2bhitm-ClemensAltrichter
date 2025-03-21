@@ -16,6 +16,10 @@
         --secondColor:#29292F;
         
 }
+a{
+    text-decoration: none;
+    padding: 4vh;
+}
 
 
 *{
