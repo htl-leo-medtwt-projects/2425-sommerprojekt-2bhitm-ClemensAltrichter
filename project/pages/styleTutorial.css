@@ -1,14 +1,14 @@
 @font-face {
     font-family: Milker;
-    src: url(fonts/Milker.otf);
+    src: url(../fonts/Milker.otf);
 }
 @font-face {
     font-family: Mono;
-    src: url(fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf);
+    src: url(../fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf);
 }
 @font-face {
     font-family: Mono-Bold;
-    src: url(fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
+    src: url(../fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
 }
 
 :root{
@@ -33,11 +33,45 @@ body{
 }
 
 #headline{
-    font-family: milker;
+    font-family: Milker;
     text-align: center;
 font-size: 300%;
+margin-bottom: 20vh;
+}
+img{
+    box-shadow: 0.3vw 0.3vw 0.3vw black;
+    border-radius: 5px;
 }
 
-img{
-    width: 30vw;
+h2{
+    width: max-content;
+    font-family: Milker;
+    font-size: 300%;
+    border-bottom: 4px var(--secondColor) solid;
+    margin-left: 3vw;
+    
 }
+
+#generalInfo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    gap: 5vw;
+    padding: 5vw;
+    
+}
+
+#generalInfo p, strong{
+    font-family: Mono;
+    font-size: x-large;
+}
+.drittel{
+    width: 27.5vw;
+}
+.zweiDrittel{
+    width: 55.5vw;
+}
+
+
