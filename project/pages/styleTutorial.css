@@ -29,7 +29,8 @@ overflow-x: hidden;
 body{
     background-color: var(--backgroundColor);
     color: var(--secondColor);
-    background-image: linear-gradient();
+    background-image: linear-gradient( to bottom right ,rgba(235, 234, 229, 0.2) 20%, rgba(13, 3, 51, 0.5));
+    background-attachment: fixed;
 }
 
 #headline{
@@ -44,14 +45,13 @@ img{
 }
 
 h2{
-    width: max-content;
+    width: max-content;  
     font-family: Milker;
     font-size: 300%;
     border-bottom: 4px var(--secondColor) solid;
     margin-left: 3vw;
-    
+    transition: all 0.5s ease-out;
 }
-
 #generalInfo{
     display: flex;
     flex-direction: row;
