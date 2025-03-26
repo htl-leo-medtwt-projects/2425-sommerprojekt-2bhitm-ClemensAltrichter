@@ -33,6 +33,18 @@ body{
     background-attachment: fixed;
 }
 
+.returnContainer{
+    width: 10vw;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: -150px;
+}
+#polygon1{
+    position: relative;
+    left: 2vw;
+    z-index: -1;
+}
 #headline{
     font-family: Milker;
     text-align: center;
@@ -50,9 +62,16 @@ h2{
     font-size: 300%;
     border-bottom: 4px var(--secondColor) solid;
     margin-left: 3vw;
-    transition: all 0.5s ease-out;
+   
 }
-#generalInfo{
+h3{
+    width: 100%;  
+    font-family: Milker;
+    font-size: 200%;
+text-align: center;
+margin: 5vh auto;
+}
+.infoSegment{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -63,7 +82,7 @@ h2{
     
 }
 
-#generalInfo p, strong{
+.infoSegment p, strong{
     font-family: Mono;
     font-size: x-large;
 }
