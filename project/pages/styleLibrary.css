@@ -32,65 +32,46 @@ body{
     background-image: linear-gradient( to bottom right ,rgba(235, 234, 229, 0.2) 20%, rgba(13, 3, 51, 0.5));
     background-attachment: fixed;
 }
+#header{
+    background-color: var(--secondColor);
+    height: 25vh;
+    position: relative;
+    z-index: -2;
+}
 
 .returnContainer{
-    width: 10vw;
+    height: 50%;
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: -150px;
+
+    top: 2vh;
+    left: -4vh;
 }
 #polygon1{
     position: relative;
-    left: 2vw;
-    z-index: -1;
+    left: 20%;
+    z-index: 0;
 }
-#headline{
-    font-family: Milker;
-    text-align: center;
-font-size: 300%;
-margin-bottom: 20vh;
-}
-img{
-    box-shadow: 0.3vw 0.3vw 0.5vw black;
-    border-radius: 5px;
+#polygon2{
+ z-index: 2;
 }
 
-h2{
-    width: max-content;  
-    font-family: Milker;
+#header h1{
+    color: var(--backgroundColor);
     font-size: 300%;
-    border-bottom: 4px var(--secondColor) solid;
-    margin-left: 3vw;
-   
-}
-h3{
-    width: 100%;  
-    font-family: Milker;
-    font-size: 200%;
-text-align: center;
-margin: 5vh auto;
-}
-.infoSegment{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
-    gap: 5vw;
-    padding: 5vw;
-    
-}
+    text-align: center;
+font-family: Milker;
 
-.infoSegment p, strong{
-    font-family: Mono;
-    font-size: x-large;
 }
-.drittel{
-    width: 27.5vw;
+#settingsVinyl{
+    height: 50%;
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    animation: rotation 6s linear infinite;
 }
-.zweiDrittel{
-    width: 55.5vw;
+@keyframes rotation {
+    0%{transform: rotateZ(0deg);}
+    100%{transform: rotateZ(360deg);}
 }
-
-
