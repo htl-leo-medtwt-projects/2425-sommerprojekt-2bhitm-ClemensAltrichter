@@ -36,9 +36,23 @@ body{
     background-color: var(--secondColor);
     height: 25vh;
     position: relative;
-    z-index: -2;
+    z-index: 0;
+    color:var(--secondColor);
 }
-
+.headerSettingBox{
+color: var(--backgroundColor);
+width: 80%;
+margin: 0px auto;
+border-bottom: var(--backgroundColor) 3px solid;
+padding: 5%;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+}
+.headerInnerBox{
+    display: flex;
+    flex-direction: column;
+}
 .returnContainer{
     height: min-content;
     position: relative;
@@ -112,5 +126,4 @@ transform: rotate(1deg);
 }
 */
 .title{
-    font-size: 150%;
-}
+    font-size
