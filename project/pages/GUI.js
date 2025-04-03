@@ -27,18 +27,18 @@ function switchLibraryHeader(){
 
      <p>Library Color: </p>
      <div id="colorsContainer">
-        <div></div>
-        <div></div>
-        <div></div>
+        <div class="libCol" id="libCol_blue"></div>
+        <div class="libCol" id="libCol_red"></div>
+        <div class="libCol" id="libCol_grey"></div>
     </div>
 
     </div>
      <div id="CardBox" class="headerSettingBox">
      <p>Card Color: </p>
      <div id="colorsContainer">
-        <div></div>
-        <div></div>
-        <div></div>
+       <div class="cardCol" id="cardCol_blue"></div>
+        <div class="cardCol" id="cardCol_red"></div>
+        <div class="cardCol" id="cardCol_grey"></div>
     </div>
 
     <p>Rounded Edges: </p>
