@@ -1,3 +1,5 @@
+let root = document.querySelector(':root')
+
 function switchLibraryHeader(){
     console.log('switchHeader');
     
@@ -42,13 +44,23 @@ function switchLibraryHeader(){
     </div>
 
     <p>Rounded Edges: </p>
-    
-    
+    <div id="colorsContainer">
+
+    <div class="edgeVal" id="noEdge" onclick="changeBorderRadius(0)"> <p>None</p> </div>
+    <div class="edgeVal" id="normalEdge" onclick="changeBorderRadius(10)"> <p>Normal</p> </div>
+    <div class="edgeVal" id="bigEdge" onclick="changeBorderRadius(20)"> <p>Large</p> </div>
+
     </div>
+    </div>
+
+    <div id="finishHeaderBTN">
+    <p>Finish</p>
+    </div>
+
     `
 }
 
-function logging(){
-    console.log('hey');
-    
+function changeBorderRadius(val){
+    this.style = 'background-color: white; color; black;'
+root.style = `--borderRadius: ${val}px`
 }
