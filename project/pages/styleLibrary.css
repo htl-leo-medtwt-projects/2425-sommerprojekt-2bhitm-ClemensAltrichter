@@ -16,6 +16,7 @@
         --secondColor:#29292F;
 
         --borderRadius:10px;
+        --cardBackground:linear-gradient( #29293F, #29292F);
         
 }
 a{
@@ -41,6 +42,7 @@ body{
     z-index: 0;
     color:var(--secondColor);
     font-family: milker;
+    transition: all 1s ease-in-out;
 }
 .headerSettingBox{
 color: var(--backgroundColor);
@@ -162,7 +164,7 @@ transform: translate(-50% ,-50%);
 .beatCard{ /*mit white Option spielen hover/standart/etc.*/
     color: var(--backgroundColor);
     font-family: Mono;
-    background-image: linear-gradient( #29293F, #29292F);
+    background-image: var(--cardBackground);
     width: 100%;
     height: 100%;
     border-radius: var(--borderRadius);
