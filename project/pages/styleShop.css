@@ -45,16 +45,38 @@
      z-index: 3;
     }
 
+    #headerBox{
+        width: 70vw;
+        height: 15vh;
+        position: fixed;
+        top: 0vh;
+        left: 30vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+       /* border-bottom: 1vh solid var(--secondColor);*/
+       
+    }
 
     #title{
         font-family: Milker;
         font-size: 400%;
         letter-spacing: 4vw;
-        position: fixed;
+        
         top: 2vh;
-        left: 70vw;
-        transform: translateX(-50%);
+        left: 35vw; /*70vw*/
+        /*transform: translateX(-50%);*/
     }
+    #currencyDisplay{
+        font-family: Mono;
+        font-size: xx-large;
+        color: gold;
+        padding: 10px;
+        text-shadow: black 2px 2px 2px;
+    }
+    
+    
+    
     #sideMenu{
         position: fixed;
         background-image: linear-gradient(#29293f,#29292f);
@@ -66,6 +88,23 @@
         justify-content: center;
         gap: 5vw;
     }
+       
+
+        /* #sideMenu{
+            position: fixed;
+            background-image: url(../img/vinyl.png);
+            background-position: right;
+            width: 30vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            justify-content: center;
+            gap: 5vw;
+            
+        }
+        */
+
     #sideMenu h1{
         font-family: Mono;
         color: var(--backgroundColor);
@@ -76,9 +115,10 @@
     }
 
     #mainContainer{
+        border-top: #29292F 1vh solid;
         width: 70vw;
         height: 85vh;
-
+        
         margin-left: 30vw;
         margin-top: 15vh;
     }
@@ -91,8 +131,52 @@
         margin: 0px auto;
     }
     .shopItem{
-        height: 15vw;
-        width: 10vw;
+        font-family: Mono;
+        height: max-content;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+       align-items: center;
+       gap: 1vw;
+        padding: 1vw;
         background-image: linear-gradient(#29293f,#29292f);
-        border-radius: var(--borderRadius) ;
+        border-radius: var(--borderRadius) ;  
+        color: var(--backgroundColor);
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+    .shopItem:hover{
+        box-shadow: 1vw 1vw 1vw black;
+        transform: scale(105%);
+    }
+    .buyBTN{
+        width:max-content;
+        padding: 0.5vw;
+        border: 2px gold solid;
+      color: gold;
+        text-shadow: 2px 2px 2px black;
+        border-radius: var(--borderRadius);
+    }
+    .buyBTN:hover{
+        background-color: gold;
+        color: black;
+        text-shadow: 2px 2px 2px rgb(159, 117, 13);
+    }
+   
+    .itemSymbol{
+        position: relative;
+        width: 8vw;
+        height: 8vw;
+        
+        background-color: rgb(221, 208, 134);
+        margin: 0 auto;
+        border-radius: var(--borderRadius);
+    }
+    .itemSymbol img{
+        position: absolute;
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% ,-50%);
+        opacity: 0.5;
     }

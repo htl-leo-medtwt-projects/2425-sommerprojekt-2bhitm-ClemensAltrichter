@@ -1,3 +1,6 @@
+console.log("GUI");
+
+
 let root = document.querySelector(':root')
 
 function switchLibraryHeader(){
@@ -6,6 +9,9 @@ function switchLibraryHeader(){
    // document.getElementById('header').style.height = '35vh'
     document.getElementById('header').style = ' height:max-content; display:flex; flex-direction: column; justify-content: space-evenly;'
 
+
+    //adding: <div class="libCol" id="libCol_base" onclick="changeLibraryBackground('rgba(235, 234, 229)','rgba(13, 3, 51)"></div>
+    //and: <div class="cardCol" id="cardCol_base" onclick="changeCardBackground('rgba(235, 234, 229)','rgba(13, 3, 51)')"></div>
     document.getElementById('header').innerHTML=`
     <div id="sortBox" class="headerSettingBox">
 
@@ -29,9 +35,10 @@ function switchLibraryHeader(){
 
      <p>Library Color: </p>
      <div id="colorsContainer">
-        <div class="libCol" id="libCol_blue"></div>
-        <div class="libCol" id="libCol_red"></div>
-        <div class="libCol" id="libCol_grey"></div>
+        <div class="libCol" id="libCol_blue" onclick="changeLibraryBackground('#0000b3','#000099')"></div>
+        <div class="libCol" id="libCol_red" onclick="changeLibraryBackground('#b30000','#800000')"></div>
+         <div class="libCol" id="libCol_grey" onclick="changeLibraryBackground('#29293f','#29292f')"></div>
+        
     </div>
 
     </div>
@@ -41,6 +48,7 @@ function switchLibraryHeader(){
        <div class="cardCol" id="cardCol_blue" onclick="changeCardBackground('#0000b3','#000099')"></div>
         <div class="cardCol" id="cardCol_red" onclick="changeCardBackground('#b30000','#800000')"></div>
         <div class="cardCol" id="cardCol_grey" onclick="changeCardBackground('#29293f','#29292f')"></div>
+        
     </div>
 
     <p>Rounded Edges: </p>
@@ -85,10 +93,49 @@ function returnLibraryHeader(){
  }
 
 function changeBorderRadius(val){
-    this.style = 'background-color: white; color: black;'
-root.style = `--borderRadius: ${val}px;`
+root.style.setProperty(`--borderRadius` , `${val}px`)
 }
 
 function changeCardBackground(val1,val2){
-root.style = `--cardBackground: linear-gradient( ${val1}, ${val2});`
+root.style.setProperty(`--cardBackground` , `linear-gradient( ${val1}, ${val2})`)
 }
+
+function changeLibraryBackground(val1,val2){
+    root.style.setProperty(`--backgroundImage` , `linear-gradient( ${val1}, ${val2})`)
+}
+
+
+displayAllShopItems();
+
+function displayAllShopItems(){
+let s = "";
+
+for(let i = 0; i< shopItems.length;i++){
+    s+=`
+    <div class="shopItem" id="shopItem${i}">
+        <div class="itemSymbol" id="itemSymbol${i}">
+            <img src="${shopItems[i].cover}" alt="icon">
+        </div>
+        <h2 class="itemName">${shopItems[i].title}</h2>
+        <div class="buyBTN">
+            <p class="itemPrice">${shopItems[i].price} $$</p>
+        </div>
+    </div>    
+    `
+    console.log(`itemSymbol${i}`);
+    
+   
+}
+
+document.getElementById('content').innerHTML = s;
+
+
+for(let i = 0; i< shopItems.length;i++){
+document.getElementById(`itemSymbol${i}`).style.backgroundColor = `${shopItems[i].color}`;
+}
+}
+
+
+
+
+
