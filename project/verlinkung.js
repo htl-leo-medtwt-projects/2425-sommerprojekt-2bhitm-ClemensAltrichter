@@ -10,7 +10,9 @@ function toLibrary(){
 function toShop(){
     window.location.replace('./pages/shop.html') 
 }
-
+function toProduce(){
+    window.location.replace('./pages/produce.html') 
+}
 
 
 

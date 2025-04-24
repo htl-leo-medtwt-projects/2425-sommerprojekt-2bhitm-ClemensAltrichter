@@ -1,0 +1,89 @@
+@font-face {
+    font-family: Milker;
+    src: url(../fonts/Milker.otf);
+}
+@font-face {
+    font-family: Mono;
+    src: url(../fonts/IBM_Plex_Mono/IBMPlexMono-Medium.ttf);
+}
+@font-face {
+    font-family: Mono-Bold;
+    src: url(../fonts/IBM_Plex_Mono/IBMPlexMono-Bold.ttf);
+}
+
+:root{
+        --backgroundColor: #EBEAE5;
+        --secondColor:#29292F;
+
+        --backgroundImage: linear-gradient( to bottom right ,rgba(235, 234, 229, 0.2) 20%, rgba(13, 3, 51, 0.5));
+
+        --borderRadius:10px;
+        --cardBackground:linear-gradient( #29293F, #29292F);
+        
+}
+
+*{
+margin: 0px;
+padding: 0px;
+overflow-x: hidden;
+}
+body{
+    background-color: var(--backgroundColor);
+    color: var(--secondColor);
+    background-image: var(--backgroundImage);
+    background-attachment: fixed;
+    color: var(--backgroundColor);
+}
+
+#header{
+    height: 10vh;
+    background-color: var(--secondColor   );
+    display: flex;
+    justify-content:space-evenly ;
+    align-items: center;
+}
+.returnContainer{
+    height: min-content;
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+
+    top: 1vh;
+    left: 1vh;
+}
+#polygon1{
+    position: relative;
+    left: 20%;
+    z-index: 0;
+}
+#polygon2{
+ z-index: 2;
+}
+#BPMBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+#main{
+
+}
+#SEQ_Container{
+    background-color: white;
+    margin: 30vh auto;
+    padding: 1vw;
+    width: max-content;
+    height: max-content;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    gap: 1vw;
+
+}
+.notes{
+    width: 5vw;
+    height: 5vw;
+    background-color: #29292F;
+}
