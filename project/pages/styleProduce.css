@@ -79,11 +79,18 @@ body{
     height: max-content;
     display: grid;
     grid-template-columns: repeat(16,1fr);
-    gap: 1vw;
+    gap: 0.5vw;
 
 }
 .notes{
     width: 5vw;
     height: 5vw;
     background-color: #29292F;
+    border-radius: var(--borderRadius);
+}
+.firstBeatOfBar{
+    background-color: #504b50;
+}
+.note.active{
+background-color: rgb(34, 34, 158);
 }

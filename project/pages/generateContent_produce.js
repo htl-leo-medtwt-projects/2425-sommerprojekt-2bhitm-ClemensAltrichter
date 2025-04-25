@@ -70,7 +70,7 @@ document.getElementById('header').innerHTML = h;
 
     for(let i = 0; i<64;i++){
         m+=`
-        <div class="notes"></div>
+        <div class="notes ${ i%4 ? '':'firstBeatOfBar'} "></div>
         `
     }
 
