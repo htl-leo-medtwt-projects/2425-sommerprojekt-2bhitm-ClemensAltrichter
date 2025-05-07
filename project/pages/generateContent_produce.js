@@ -57,7 +57,10 @@ h+=`
                 <input type="range" id="inputBPM" min="50" max="300" value="120" >
                 <label id="BPMLabel" for="inputBPM"> 120 BPM</label>
             </div>
-
+            
+            <div id="playButton">
+            
+            </div>
         </div>    
 
 `
@@ -68,12 +71,20 @@ document.getElementById('header').innerHTML = h;
 
     m+='<div id="SEQ_Container">'
 
-    for(let i = 0; i<64;i++){
+
+    for(let r = 0; r<4;r++){
+      for(let n= 0; n<16;n++){
         m+=`
-        <div class="notes ${ i%4 ? '':'firstBeatOfBar'} "></div>
+        <div class="notes ${ n%4 ? '':'firstBeatOfBar'} " ></div>
         `
+      }
     }
 
+    /*
+    for(let i = 0; i<64;i++){
+        
+    }
+*/
 
 
     m+='</div>'

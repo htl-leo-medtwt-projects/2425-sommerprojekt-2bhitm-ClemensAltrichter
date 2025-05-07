@@ -67,10 +67,13 @@ body{
 
 
 
-
-#main{
-
+#playButton{
+    width: 10vw;
+    height: 5vh;
+    background-color: blue;
 }
+
+
 #SEQ_Container{
     background-color: white;
     margin: 30vh auto;
@@ -91,6 +94,6 @@ body{
 .firstBeatOfBar{
     background-color: #504b50;
 }
-.note.active{
+.active{
 background-color: rgb(34, 34, 158);
 }
