@@ -20,18 +20,25 @@ const synths = [
     new Tone.Synth().toDestination(),
     new Tone.Synth().toDestination(),
     new Tone.Synth().toDestination(),
-    new Tone.Synth().toDestination()
+    new Tone.Synth().toDestination(),
+    new Tone.Synth().toDestination(),
+    new Tone.Synth().toDestination(),
+    new Tone.Synth().toDestination(),
+    new Tone.Synth().toDestination(),
 ]
 
-const scaleOfNotes=['C4','D4','Eb4','F4'];
+const scaleOfNotes=['C4','D4','E4','F4','G4','A4','B4'];
 
 
 let rows =[
+    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[7], active: false})),
+    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[6], active: false})),
+    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[5], active: false})),
+    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[4], active: false})),
     Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[3], active: false})),
     Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[2], active: false})),
     Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[1], active: false})),
-    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[0], active: false})),
-
+    Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[0], active: false}))
 ]
 
 
@@ -78,7 +85,7 @@ document.getElementsByClassName("notes")[row*16 + note].classList.add("active");
 }
 
 
-for(let r = 0; r<4;r++){
+for(let r = 0; r<8;r++){
     for(let n= 0; n<16;n++){
         document.getElementsByClassName("notes")[r*16 + n].addEventListener("click",()=>{notePressed(r,n)})
     }
@@ -101,8 +108,10 @@ function startPlay(){
     Tone.Transport.bpm.value = bpm;
     Tone.Transport.start();
     isPlaying = true;
+    document.getElementById("playButton").innerHTML = '<img src="../img/pauseButton.svg">'
 }
 function pausePlay(){
     Tone.Transport.stop();
     isPlaying = false;
+    document.getElementById("playButton").innerHTML = '<img src="../img/playButton.svg">'
 }

@@ -59,7 +59,7 @@ h+=`
             </div>
             
             <div id="playButton">
-            
+              <img src="../img/playButton.svg">
             </div>
         </div>    
 
@@ -72,7 +72,7 @@ document.getElementById('header').innerHTML = h;
     m+='<div id="SEQ_Container">'
 
 
-    for(let r = 0; r<4;r++){
+    for(let r = 0; r<8;r++){
       for(let n= 0; n<16;n++){
         m+=`
         <div class="notes ${ n%4 ? '':'firstBeatOfBar'} " ></div>

@@ -66,17 +66,26 @@ body{
 }
 
 
+#controls{
+    
+    width: 30vw;
+    display: flex;
+justify-content: space-evenly;
+margin: 0 auto;
+}
 
 #playButton{
-    width: 10vw;
+    overflow: hidden;
     height: 5vh;
-    background-color: blue;
+}
+#playButton img{
+    height: 100%;
 }
 
 
 #SEQ_Container{
     background-color: white;
-    margin: 30vh auto;
+    margin: 20vh auto;
     padding: 1vw;
     width: max-content;
     height: max-content;
