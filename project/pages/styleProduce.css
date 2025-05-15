@@ -39,7 +39,8 @@ body{
     height: 15vh;
     background-color: var(--secondColor   );
     display: flex;
-    justify-content:space-evenly ;
+    justify-content:center ;
+    gap: 10vw;
     align-items: center;
 }
 .returnContainer{
@@ -67,10 +68,12 @@ body{
 
 
 #controls{
+    position: absolute;
     font-family: Mono;
-    width: 30vw;
-    display: flex;
-justify-content: space-evenly;
+     display: flex;
+    justify-content:center ;
+    gap: 10vw;
+    align-items: center;
 margin: 0 auto;
 }
 
@@ -82,21 +85,41 @@ margin: 0 auto;
     height: 100%;
 }
 
+#saveBTN{
+    overflow: hidden;
+   padding: 1vw;
+    background-color: blue;
+}
+
 
 #SEQ_Container{
+    font-family: Mono;
+    color: black;
     background-color: white;
     margin: 20vh auto;
     padding: 1vw;
     width: max-content;
     height: max-content;
     display: grid;
-    grid-template-columns: repeat(16,1fr);
+    grid-template-columns: 8vw  repeat(16,1fr);
     gap: 0.5vw;
-
+    border-radius: var(--borderRadius);
+}
+.rowLabel{
+    width: 8vw;
+    height: 4vw;
+    position: relative;
+}
+.rowLabel p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: larger;
 }
 .notes{
-    width: 5vw;
-    height: 5vw;
+    width: 4vw;
+    height: 4vw;
     background-color: #29292F;
     border-radius: var(--borderRadius);
 }

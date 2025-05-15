@@ -61,7 +61,12 @@ h+=`
             <div id="playButton">
               <img src="../img/playButton.svg">
             </div>
-        </div>    
+        
+
+        <div id="saveBTN" onclick="saveBeat()">
+              <p>Save</p>
+           </div>   
+        </div>
 
 `
 document.getElementById('header').innerHTML = h;
@@ -73,11 +78,14 @@ document.getElementById('header').innerHTML = h;
 
 
     for(let r = 0; r<8;r++){
+      m+=`<div class="rowLabel"></div>
+      `
       for(let n= 0; n<16;n++){
         m+=`
         <div class="notes ${ n%4 ? '':'firstBeatOfBar'} " ></div>
         `
       }
+
     }
 
     /*
