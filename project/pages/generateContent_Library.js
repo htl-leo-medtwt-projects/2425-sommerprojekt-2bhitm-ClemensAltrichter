@@ -36,11 +36,12 @@ const libraryData = {
       grid: [
         {
           cover: "../img/vinyl-icon.jpg",
+          
           title: "Song 1",
           rating: "rating",
           date: "date"
         },
-        {}, {}, {}, {} // leere Karten
+        //{}, {}, {}, {} // leere Karten
       ]
     }
   };
@@ -69,6 +70,7 @@ const libraryData = {
     `;
   
     // BeatCards erzeugen
+    /*
     const gridHTML = data.content.grid.map(item => {
       if (!item.cover) return `<div class="beatCard"></div>`; // leere Card
       return `
@@ -82,6 +84,26 @@ const libraryData = {
         </div>
       `;
     }).join('');
+    */
+
+    let gridHTML = "";
+    for(let i = 0; i<libraryData.content.grid.length;i++){
+      if (!libraryData.content.grid[i].cover) {
+        gridHTML += `<div class="beatCard"></div>`; // leere Card
+      } else {
+        gridHTML += `
+          <div class="beatCard" onclick="displayInfoBox(${i})">
+            <div class="cover">
+              <img src="${libraryData.content.grid[i].cover}" alt="icon">
+            </div>
+            <p class="title">${libraryData.content.grid[i].title}</p>
+            <p class="rating">${libraryData.content.grid[i].rating}</p>
+            <p class="date">${libraryData.content.grid[i].date}</p>
+          </div>
+        `;
+      }
+    }
+
   
     const contentHTML = `
       <div id="content">

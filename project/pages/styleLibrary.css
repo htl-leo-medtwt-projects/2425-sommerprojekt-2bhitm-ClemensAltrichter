@@ -200,3 +200,64 @@ transform: translate(-50% ,-50%);
 transform: rotate(1deg);
 }
 */
+#infoBox{
+    font-family: Mono;
+    color: var(--backgroundColor);
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--secondColor);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--borderRadius);
+    border: 3px var(--backgroundColor) solid;
+    padding: 2vw;
+}
+#infoCover{
+    
+    width: 15vw;
+    height: 15vw;
+    border-radius: var(--borderRadius);
+     overflow: hidden;
+     position: relative;
+
+}
+#infoCover img{
+    width: 70%;
+   opacity: 0.3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#infoText{
+    width: max-content;
+    position: relative;
+    top: 0px;
+    right: 0px;
+
+
+}
+#BTNContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    padding: 2vh;
+}
+#editBTN{
+    width: max-content;
+    background-color: blue;
+    padding: 1vw;
+    color: var(--backgroundColor);
+    border-radius: var(--borderRadius);
+}
+#closeInfoBTN{
+    width: max-content;
+    background-color: var(--backgroundColor);
+    padding: 1vw;
+    color: var(--secondColor);
+    border-radius: var(--borderRadius);
+}

@@ -105,34 +105,33 @@ function changeLibraryBackground(val1,val2){
 }
 
 
-displayAllShopItems();
 
-function displayAllShopItems(){
-let s = "";
 
-for(let i = 0; i< shopItems.length;i++){
-    s+=`
-    <div class="shopItem" id="shopItem${i}">
-        <div class="itemSymbol" id="itemSymbol${i}">
-            <img src="${shopItems[i].cover}" alt="icon">
+function displayInfoBox(index){
+    document.getElementById('grid').innerHTML += `
+    <div id="infoBox"> 
+        <div id="infoCover" style="background-color:${savedSongs[index].color}">
+        <img src="${savedSongs[index].cover}" alt="icon">
         </div>
-        <h2 class="itemName">${shopItems[i].title}</h2>
-        <div class="buyBTN">
-            <p class="itemPrice">${shopItems[i].price} $$</p>
+        <div id="infoText">
+            <h1>${savedSongs[index].title}</h1>
+            <p>${savedSongs[index].rating}</p>
+            <p>${savedSongs[index].date}</p>
         </div>
-    </div>    
-    `
-    console.log(`itemSymbol${i}`);
-    
-   
+
+        <div id="BTNContainer">
+            <div id="closeInfoBTN" onclick="closeInfoBox()">
+                <p>Close</p>
+            </div>
+            <div id="editBTN">
+                <p>Edit</p>
+            </div>
+        </div>
+     </div>`
 }
 
-document.getElementById('content').innerHTML = s;
-
-
-for(let i = 0; i< shopItems.length;i++){
-document.getElementById(`itemSymbol${i}`).style.backgroundColor = `${shopItems[i].color}`;
-}
+function closeInfoBox(){
+    document.getElementById('infoBox').remove();
 }
 
 

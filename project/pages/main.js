@@ -1,4 +1,17 @@
-//import * as Tone from "tone";
+//Library Abschnitt
+let savedSongs = [];
+
+
+
+
+
+
+
+
+
+
+
+
 
 let slider = document.getElementById('inputBPM')
 
@@ -206,4 +219,18 @@ function loadBeat(index){
     synths = JSON.parse(localStorage.getItem('savedSynths'))[index];
     scaleOfNotes = JSON.parse(localStorage.getItem('savedNotes'))[index];
     */
+   updateSEQ();
+}
+function updateSEQ(){
+
+    for(let note = 0; note < 16; note++){
+        for(let row = 0; row < 8; row++){
+            if(rows[row][note].active){
+                document.getElementsByClassName("notes")[row*16 + note].classList.add("active");
+            }else{
+                document.getElementsByClassName("notes")[row*16 + note].classList.remove("active");
+            }
+        }
+    }
+   
 }
