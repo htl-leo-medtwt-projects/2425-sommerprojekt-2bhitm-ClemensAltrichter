@@ -115,7 +115,9 @@ function displayInfoBox(index){
         </div>
         <div id="infoText">
             <h1>${savedSongs[index].title}</h1>
-            <p>${savedSongs[index].rating}</p>
+            <input type="text" id="titleInput" value="${savedSongs[index].title}">
+            <p id="infoRatingDisplay">${savedSongs[index].rating}</p>
+            <input type="range" id="ratingInput" step="0.5" min="0" max="5" value="${savedSongs[index].rating}" oninput="updateRating(this.value)">
             <p>${savedSongs[index].date}</p>
         </div>
 
@@ -134,6 +136,9 @@ function closeInfoBox(){
     document.getElementById('infoBox').remove();
 }
 
+function updateRating(val){
+document.getElementById('infoRatingDisplay').innerHTML = val + " / 5";
+}
 
 
 

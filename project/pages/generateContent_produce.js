@@ -61,11 +61,18 @@ h+=`
             <div id="playButton">
               <img src="../img/playButton.svg">
             </div>
-        
 
-        <div id="saveBTN" onclick="saveBeat()">
-              <p>Save</p>
-           </div>   
+            <div id="headerBTNContainer">
+
+              <div id="clearBTN" onclick="clearBeat()">
+               <p>clear</p>
+              </div>   
+        
+              <div id="saveBTN" onclick="displaySavingOptions()">
+                <p>Save</p>
+              </div>   
+           </div>
+
         </div>
 
 `

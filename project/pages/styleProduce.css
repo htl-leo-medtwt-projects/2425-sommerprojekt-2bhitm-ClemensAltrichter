@@ -72,7 +72,7 @@ body{
     font-family: Mono;
      display: flex;
     justify-content:center ;
-    gap: 10vw;
+    gap: 15vw;
     align-items: center;
 margin: 0 auto;
 }
@@ -84,11 +84,25 @@ margin: 0 auto;
 #playButton img{
     height: 100%;
 }
+#headerBTNContainer{
+    display: flex;
+    width: max-content;
+    gap: 5vw;
+}
 
+#clearBTN{
+
+     overflow: hidden;
+   padding: 1vw;
+    background-color: var(--secondColor);
+    border-radius: var(--borderRadius);
+    border: var(--backgroundColor) solid 1px;
+}
 #saveBTN{
     overflow: hidden;
    padding: 1vw;
     background-color: blue;
+    border-radius: var(--borderRadius);
 }
 
 
@@ -128,4 +142,43 @@ margin: 0 auto;
 }
 .active{
 background-color: rgb(34, 34, 158);
+}
+
+
+#savingOptions{
+       font-family: Mono;
+    color: var(--backgroundColor);
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--secondColor);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--borderRadius);
+    border: 3px var(--backgroundColor) solid;
+    padding: 2vw;
+    box-shadow: 1vw 1vw 1vw black;
+}
+
+#BTNContainer{
+display: flex;
+justify-content: center;
+ align-items: center;
+    gap: 5vw;
+    padding: 2vh;
+}
+#BTNContainer div{
+    width: max-content;
+    padding: 1vw;
+    border-radius: var(--borderRadius);
+} 
+#closeSavingBTN{
+    border: var(--backgroundColor) solid 1px;
+    color: var(--backgroundColor);
+background-color: var(--secondColor);
+}
+#savingBTN{
+color: var(--backgroundColor);
+background-color: blue;
 }

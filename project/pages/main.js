@@ -180,6 +180,18 @@ function pausePlay(){
     document.getElementById("playButton").innerHTML = '<img src="../img/playButton.svg">'
 }
 
+function clearBeat(){
+    
+    for(let i = 0; i<rows.length;i++){
+        for(let n= 0; n<16;n++){
+            rows[i][n].active = false;
+            document.getElementsByClassName("notes")[i*16 + n].classList.remove("active");
+        }
+    }
+    
+    
+}
+
 function saveBeat(){
    
     console.log("saveBeat");
@@ -233,4 +245,38 @@ function updateSEQ(){
         }
     }
    
+}
+
+function displaySavingOptions(){
+    document.getElementById("main").innerHTML += `
+    <div id="savingOptions">
+        <h1>Enter Informations</h1>
+        <p>Enter Beat Title</p>
+        <input type="text" id="titleInput" value="myBeat">
+        <p>selct cover color</p>
+        <input type="color" id="colorInput">
+        <p>rate this Beat</p>
+         <p id="ratingDisplay"></p>
+            <input type="range" id="ratingInput" step="0.5" min="0" max="5"  oninput="updateRating(this.value)">
+            <p>date of making:</p>
+        <p>${new Date().toDateString()}</p>
+
+    <div id="BTNContainer">
+        <div id="closeSavingBTN" onclick="closeSavingOptions()">
+            <p>Close</p>
+        </div>
+        <div id="savingBTN" onclick="saveBeat()">
+            <p>Save</p>
+        </div>
+    </div>
+
+    </div>
+    `
+}
+function closeSavingOptions(){
+    document.getElementById("savingOptions").remove();
+}
+
+function updateRating(val){
+document.getElementById('ratingDisplay').innerHTML = val + " / 5";
 }
