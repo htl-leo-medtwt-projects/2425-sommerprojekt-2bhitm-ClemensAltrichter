@@ -110,23 +110,26 @@ function changeLibraryBackground(val1,val2){
 function displayInfoBox(index){
     document.getElementById('grid').innerHTML += `
     <div id="infoBox"> 
-        <div id="infoCover" style="background-color:${savedSongs[index].color}">
-        <img src="${savedSongs[index].cover}" alt="icon">
+    <div id="infoDisplayBox">
+        <div id="infoCover" style="background-color:${savedInfo[index].color}">
+        <img src="../img/vinyl-icon.jpg" alt="icon">
         </div>
         <div id="infoText">
-            <h1>${savedSongs[index].title}</h1>
-            <input type="text" id="titleInput" value="${savedSongs[index].title}">
-            <p id="infoRatingDisplay">${savedSongs[index].rating}</p>
-            <input type="range" id="ratingInput" step="0.5" min="0" max="5" value="${savedSongs[index].rating}" oninput="updateRating(this.value)">
-            <p>${savedSongs[index].date}</p>
+            <input type="text" id="titleInput" value="${savedInfo[index].title}">
+            <p id="infoRatingDisplay">${savedInfo[index].rating} / 5</p>
+            <input type="range" id="ratingInput" step="0.5" min="0" max="5" value="${savedInfo[index].rating}" oninput="updateRating(this.value)">
+            <p>${savedInfo[index].date}</p>
         </div>
-
+</div>
         <div id="BTNContainer">
             <div id="closeInfoBTN" onclick="closeInfoBox()">
                 <p>Close</p>
             </div>
-            <div id="editBTN">
-                <p>Edit</p>
+            <div id="editBTN" onclick="editInfo(${index})">
+                <p>confirm</p>
+            </div>
+            <div id="loadBTN" onclick="workBeat(${index})">
+                <p>load</p>
             </div>
         </div>
      </div>`
@@ -135,9 +138,23 @@ function displayInfoBox(index){
 function closeInfoBox(){
     document.getElementById('infoBox').remove();
 }
+function editInfo(index){
+savedInfo[index].title = document.getElementById('titleInput').value;
+savedInfo[index].rating = document.getElementById('ratingInput').value;
+console.log(savedInfo[index].title);
+console.log(savedInfo[index].rating);
+saveInfo();
+createLibraryPage(libraryData);
+}
 
 function updateRating(val){
 document.getElementById('infoRatingDisplay').innerHTML = val + " / 5";
+}
+
+function workBeat(index){
+    
+    window.location.href = `./produce.html?index=${index}`;
+    loadBeat(index);
 }
 
 

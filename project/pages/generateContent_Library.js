@@ -117,7 +117,7 @@ const libraryData = {
        */
         gridHTML += `
           <div class="beatCard" onclick="displayInfoBox(${i})">
-            <div class="cover">
+            <div class="cover" style="background-color:${savedInfo[i].color}">
               <img src="../img/vinyl-icon.jpg" alt="icon">
             </div>
             <p class="title">${savedInfo[i].title}</p>

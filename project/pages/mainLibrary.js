@@ -27,3 +27,9 @@ function pullInfo(){
     savedInfo = JSON.parse(localStorage.getItem('savedInfo')) ?? [];
     console.log("F:",savedInfo);
 }
+
+function saveInfo(){
+    console.log(savedInfo);
+    
+localStorage.setItem('savedInfo', JSON.stringify(savedInfo));
+}

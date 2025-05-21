@@ -239,6 +239,17 @@ function saveInfo(){
     closeSavingOptions();
 
 }
+checkURL();
+function checkURL(){
+    let params = new URLSearchParams(window.location.search);
+    if(params.has('index')){
+        
+        let index = params.get('index');
+        
+        loadBeat(index);
+    }
+   
+}
 
 function loadBeat(index){
     rows = JSON.parse(localStorage.getItem('savedBeat'))[index];
