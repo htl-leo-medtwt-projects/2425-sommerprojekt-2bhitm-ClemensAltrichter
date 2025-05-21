@@ -85,7 +85,7 @@ const libraryData = {
       `;
     }).join('');
     */
-
+/*
     let gridHTML = "";
     for(let i = 0; i<libraryData.content.grid.length;i++){
       if (!libraryData.content.grid[i].cover) {
@@ -103,6 +103,31 @@ const libraryData = {
         `;
       }
     }
+
+    */
+   let gridHTML = "";
+    for(let i = 0; i<savedSongs.length;i++){
+      console.log("savedsongs" , savedSongs[i]);
+      console.log("savedinfo" , savedInfo[i]);
+      
+      /*
+      if (!libraryData.content.grid[i].cover) {
+        gridHTML += `<div class="beatCard"></div>`; // leere Card
+      } else {
+       */
+        gridHTML += `
+          <div class="beatCard" onclick="displayInfoBox(${i})">
+            <div class="cover">
+              <img src="../img/vinyl-icon.jpg" alt="icon">
+            </div>
+            <p class="title">${savedInfo[i].title}</p>
+            <p class="rating">${savedInfo[i].rating}</p>
+            <p class="date">${savedInfo[i].date}</p>
+          </div>
+        `;
+     // }
+    }
+
 
   
     const contentHTML = `

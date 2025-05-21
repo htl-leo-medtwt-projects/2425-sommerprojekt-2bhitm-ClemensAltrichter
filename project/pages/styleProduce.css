@@ -70,7 +70,7 @@ body{
 #controls{
     position: absolute;
     font-family: Mono;
-     display: flex;
+    display: flex;
     justify-content:center ;
     gap: 15vw;
     align-items: center;

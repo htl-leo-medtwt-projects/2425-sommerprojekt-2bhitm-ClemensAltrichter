@@ -220,7 +220,24 @@ function saveBeat(){
     
     localStorage.setItem('savedNotes', JSON.stringify(savedNotes));
 */
+
+saveInfo();
     
+}
+function saveInfo(){
+    let title = document.getElementById('titleInput').value;
+    let color = document.getElementById('colorInput').value;
+    let rating = document.getElementById('ratingInput').value;
+    let date = new Date().toDateString();
+    
+    let savedInfo = JSON.parse(localStorage.getItem('savedInfo')) ?? [];
+    
+    savedInfo.push({title, color, rating, date});
+    
+    localStorage.setItem('savedInfo', JSON.stringify(savedInfo));
+    
+    closeSavingOptions();
+
 }
 
 function loadBeat(index){

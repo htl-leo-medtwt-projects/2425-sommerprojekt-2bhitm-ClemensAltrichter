@@ -11,3 +11,19 @@ savedSongs.push({
     id: 0
 });
 
+pullSongs();
+function pullSongs(){
+    savedSongs = JSON.parse(localStorage.getItem('savedBeat')) ?? [];
+    
+    console.log("E:",savedSongs);
+}
+
+
+let savedInfo = [];
+
+pullInfo();
+
+function pullInfo(){
+    savedInfo = JSON.parse(localStorage.getItem('savedInfo')) ?? [];
+    console.log("F:",savedInfo);
+}
