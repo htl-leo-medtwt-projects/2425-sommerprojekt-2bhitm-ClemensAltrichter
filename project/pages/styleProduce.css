@@ -143,6 +143,9 @@ margin: 0 auto;
 .active{
 background-color: rgb(34, 34, 158);
 }
+.current{
+    border: 2px black solid;
+}
 
 
 #savingOptions{
@@ -159,6 +162,15 @@ background-color: rgb(34, 34, 158);
     border: 3px var(--backgroundColor) solid;
     padding: 2vw;
     box-shadow: 1vw 1vw 1vw black;
+}
+#savingOptionsContainer{
+    margin: 5vh 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
 }
 
 #BTNContainer{

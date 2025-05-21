@@ -64,7 +64,7 @@ const synths = [
   const scaleOfNotes = ['C1', 'D#1', 'F#2', 'C2', 'E3', 'G3', 'A4', 'C5'];
   
   */
-const rowNames=['C4','D4','E4','F4','c2','hiHat','snare','Kick'];
+const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
 
   const sampler = new Tone.Sampler({
   urls: {
@@ -80,7 +80,7 @@ const rowNames=['C4','D4','E4','F4','c2','hiHat','snare','Kick'];
   baseUrl: "../sounds/Cassette808_Maschine/Cassette808_Samples/",
 }).toDestination();
 
-const scaleOfNotes = ['C2', 'B1', 'A1', 'G1', 'F1', 'E1', 'D1', 'C1'];
+const scaleOfNotes = [ 'C1','D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2',];
 
   
 
@@ -112,6 +112,12 @@ Tone.Transport.scheduleRepeat(time => {
     for(let i = 0; i < rows.length;i++){
         let synth = sampler[i]; //synths[i];
         let note = rows[i][beat];
+        if(document.getElementsByClassName("notes")[i*16+ 15].classList.contains("current")){
+        document.getElementsByClassName("notes")[i*16+ 15].classList.remove("current")
+        }
+         document.getElementsByClassName("notes")[i*16+ Math.max(0,beat-1)].classList.remove("current")
+        document.getElementsByClassName("notes")[i*16 + beat].classList.add("current")
+        
         
         console.log(beat);
         console.log(i);
@@ -125,9 +131,10 @@ Tone.Transport.scheduleRepeat(time => {
             sampler.triggerAttackRelease(note.note,"16n",time)//synth
             
         }  
-          
-    }
+         
+    }  
  beat = (beat+1)%16
+
 
 },"16n");
 
@@ -278,17 +285,26 @@ function updateSEQ(){
 function displaySavingOptions(){
     document.getElementById("main").innerHTML += `
     <div id="savingOptions">
-        <h1>Enter Informations</h1>
+        
+<div id="savingOptionsContainer">
+<div class="savingOption">
         <p>Enter Beat Title</p>
         <input type="text" id="titleInput" value="myBeat">
+</div>
+<div class="savingOption">
         <p>selct cover color</p>
         <input type="color" id="colorInput">
+</div>
+<div class="savingOption">
         <p>rate this Beat</p>
          <p id="ratingDisplay"></p>
             <input type="range" id="ratingInput" step="0.5" min="0" max="5"  oninput="updateRating(this.value)">
+</div>
+<div class="savingOption">            
             <p>date of making:</p>
         <p>${new Date().toDateString()}</p>
-
+        </div>
+</div>
     <div id="BTNContainer">
         <div id="closeSavingBTN" onclick="closeSavingOptions()">
             <p>Close</p>
