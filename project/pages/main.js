@@ -77,7 +77,7 @@ const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
   B1: "Cassette808_Tom01.wav",
   C2: "Cassette808_Cow01.wav",
   },
-  baseUrl: "../sounds/Cassette808_Maschine/Cassette808_Samples/",
+  baseUrl: "../sounds/Cassette808_Maschine/Cassette808_Samples/", 
 }).toDestination();
 
 const scaleOfNotes = [ 'C1','D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2',];

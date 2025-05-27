@@ -1,7 +1,7 @@
 
 
 let savedSongs = [];
-
+/*
 savedSongs.push({
     title: "Song1",
     cover: "../img/vinyl-icon.jpg",
@@ -10,7 +10,7 @@ savedSongs.push({
     color: "blue",
     id: 0
 });
-
+*/
 pullSongs();
 function pullSongs(){
     savedSongs = JSON.parse(localStorage.getItem('savedBeat')) ?? [];

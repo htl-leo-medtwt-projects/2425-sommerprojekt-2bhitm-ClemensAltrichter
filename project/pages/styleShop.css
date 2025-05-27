@@ -156,6 +156,7 @@
       color: gold;
         text-shadow: 2px 2px 2px black;
         border-radius: var(--borderRadius);
+        cursor: pointer;
     }
     .buyBTN:hover{
         background-color: gold;
@@ -179,4 +180,19 @@
         left: 50%;
         transform: translate(-50% ,-50%);
         opacity: 0.5;
+    }
+
+    .bought>.buyBTN{
+         width:max-content;
+        padding: 0.5vw;
+        border: 2px rgb(5, 100, 35) solid;
+      color: rgb(5, 100, 35);
+        text-shadow: 2px 2px 2px black;
+        border-radius: var(--borderRadius);
+        
+    }
+    .bought>.buyBTN:hover{
+        background-color: rgb(5, 100, 35);
+        color:var(--secondColor);
+        text-shadow: 2px 2px 2px rgb(10, 98, 8)
     }
