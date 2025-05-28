@@ -13,11 +13,14 @@ let savedSongs = [];
 
 
 
+
 let slider = document.getElementById('inputBPM')
 
 let notes = Array(64).fill('')
 let bpm = 120;
 let isPlaying = false;
+
+let num_rows=8;
 
 
 
@@ -64,8 +67,41 @@ const synths = [
   const scaleOfNotes = ['C1', 'D#1', 'F#2', 'C2', 'E3', 'G3', 'A4', 'C5'];
   
   */
-const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
+//const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
+const rowNames = [
+  'Cowbell',
+  'Tom',
+  'Cymball',
+  'Clap',
+  'Snare',
+  'hiHat',
+  'CP',
+  '808',
 
+  'Kick',
+  'hiHat1',
+  'hiHat2',
+  'Maracas',
+  'Rim',
+  'Snare1',
+  'Conga',
+  'hiHat3',
+  'hiHat4',
+  'hiHat5',
+  'hiHat6',
+  'Kick1',
+  'Kick2',
+  'Kick3',
+  'Kick4',
+  'Snare2',
+  'Snare3',
+  'Snare4',
+  'Tambourine',
+  'Tambourine1'
+];
+
+
+/*
   const sampler = new Tone.Sampler({
   urls: {
     C1: "Cassette808_BD01.wav",
@@ -77,10 +113,52 @@ const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
   B1: "Cassette808_Tom01.wav",
   C2: "Cassette808_Cow01.wav",
   },
-  baseUrl: "../sounds/Cassette808_Maschine/Cassette808_Samples/", 
+  baseUrl: "../sounds/final/", 
+}).toDestination();
+*/
+
+  const sampler = new Tone.Sampler({
+ urls: {
+  C1: "Cassette808_BD01.wav",
+  D1: "Cassette808_CL_01.wav",
+  E1: "Cassette808_CP_01.wav",
+  F1: "Cassette808_Cow01.wav",
+  G1: "Cassette808_Cym01.wav",
+  A1: "Cassette808_HH_01.wav",
+  B1: "Cassette808_HHo_01.wav",
+  C2: "Cassette808_MA.wav",
+  D2: "Cassette808_Rim_01.wav",
+  E2: "Cassette808_Snr01.wav",
+  F2: "Cassette808_Tom01.wav",
+  G2: "Cassette808_conga01.wav",
+  A2: "Classic_Hat_10.aif",
+  B2: "Classic_Hat_2.aif",
+  C3: "Classic_Hat_3.aif",
+  D3: "Classic_Hat_6.aif",
+  E3: "Classic_Hat_9.aif",
+  F3: "Classic_Kick_1.aif",
+  G3: "Classic_Kick_10.aif",
+  A3: "Classic_Kick_3.aif",
+  B3: "Classic_Kick_6.aif",
+  C4: "Classic_Kick_7.aif",
+  D4: "Classic_Snare_1.aif",
+  E4: "Classic_Snare_3.aif",
+  F4: "Classic_Snare_4.aif",
+  G4: "Classic_Tambrine_1.aif",
+  A4: "Classic_Tambrine_2.aif"
+},
+  baseUrl: "../sounds/final/", 
 }).toDestination();
 
-const scaleOfNotes = [ 'C1','D1', 'E1', 'F1', 'G1', 'A1', 'B1', 'C2',];
+//const scaleOfNotes = [ 'C1','D1', 'A1', 'E2', 'E1', 'G1', 'F2', 'F1',];
+
+const scaleOfNotes = [
+  'C1', 'D1', 'A1', 'E2', 'E1', 'G1', 'F2', 'F1',
+  'B1', 'C2', 'D2', 'F3', 'G2', 'A2', 'B2',
+  'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3',
+  'C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4'
+];
+
 
   
 
@@ -323,4 +401,23 @@ function closeSavingOptions(){
 
 function updateRating(val){
 document.getElementById('ratingDisplay').innerHTML = val + " / 5";
+}
+
+function pullInstruments(){
+    let boughtItems = JSON.parse(localStorage.getItem('boughtItems')) ?? [];
+
+    console.log("Item pull: ", boughtItems);
+    
+
+    if(boughtItems.length > 0){
+        addInstrument(boughtItems);
+    }
+}
+function addInstrument(boughtItems){
+    for(let i = 0; i<boughtItems.length;i++){
+        rows.push( Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[boughtItems[i] + 8], active: false})))
+        num_rows++;
+
+
+    }
 }
