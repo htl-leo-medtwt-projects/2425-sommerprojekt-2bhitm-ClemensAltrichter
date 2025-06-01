@@ -20,6 +20,9 @@ let notes = Array(64).fill('')
 let bpm = 120;
 let isPlaying = false;
 
+let boughtItems// = JSON.parse(localStorage.getItem('boughtItems')) ?? [];
+//console.log("boughtItems: ", boughtItems);
+
 let num_rows=8;
 
 
@@ -68,7 +71,7 @@ const synths = [
   
   */
 //const rowNames=['Cowbell','Tom','Cymball','Clap','Snare','hiHat','CP','808'];
-const rowNames = [
+/*const rowNames = [
   'Cowbell',
   'Tom',
   'Cymball',
@@ -99,6 +102,37 @@ const rowNames = [
   'Tambourine',
   'Tambourine1'
 ];
+*/
+const rowNames = [
+  'Cowbell',
+  'Tom',
+  'Cymball',
+  'Clap',
+  'Snare',
+  'hiHat',
+  'CP',
+  '808',
+
+  'hiHat1',
+  'Maracas',
+  'Rim',
+  'Conga',
+  'hiHat2',
+  'hiHat3',
+  'hiHat4',
+  'hiHat5',
+  'Kick',
+  'Kick1',
+  'Kick2',
+  'Kick3',
+  'Kick4',
+  'Snare1',
+  'Snare2',
+  'Snare3',
+  'Tambourine',
+  'Tambourine1'
+];
+
 
 
 /*
@@ -117,19 +151,23 @@ const rowNames = [
 }).toDestination();
 */
 
-  const sampler = new Tone.Sampler({
+  /*const sampler = new Tone.Sampler({
  urls: {
   C1: "Cassette808_BD01.wav",
   D1: "Cassette808_CL_01.wav",
-  E1: "Cassette808_CP_01.wav",
-  F1: "Cassette808_Cow01.wav",
-  G1: "Cassette808_Cym01.wav",
   A1: "Cassette808_HH_01.wav",
+  E2: "Cassette808_Snr01.wav",
+  E1: "Cassette808_CP_01.wav",
+  G1: "Cassette808_Cym01.wav",
+  F2: "Cassette808_Tom01.wav",
+  F1: "Cassette808_Cow01.wav",
+  
+ 
   B1: "Cassette808_HHo_01.wav",
   C2: "Cassette808_MA.wav",
   D2: "Cassette808_Rim_01.wav",
-  E2: "Cassette808_Snr01.wav",
-  F2: "Cassette808_Tom01.wav",
+  
+  
   G2: "Cassette808_conga01.wav",
   A2: "Classic_Hat_10.aif",
   B2: "Classic_Hat_2.aif",
@@ -149,15 +187,64 @@ const rowNames = [
 },
   baseUrl: "../sounds/final/", 
 }).toDestination();
+*/
+
+const sampler = new Tone.Sampler({
+  urls: {
+    C1: "Cassette808_BD01.wav",
+    D1: "Cassette808_CL_01.wav",
+    A1: "Cassette808_HH_01.wav",
+    E2: "Cassette808_Snr01.wav",
+    E1: "Cassette808_CP_01.wav",
+    G1: "Cassette808_Cym01.wav",
+    F2: "Cassette808_Tom01.wav",
+    F1: "Cassette808_Cow01.wav",
+
+    B1: "Cassette808_HHo_01.wav",
+    C2: "Cassette808_MA.wav",
+    D2: "Cassette808_Rim_01.wav",
+    G2: "Cassette808_conga01.wav",
+      A2: "Classic_Hat_10.wav",
+      B2: "Classic_Hat_2.wav",
+      C3: "Classic_Hat_3.wav",
+      D3: "Classic_Hat_6.wav",
+      E3: "Classic_Hat_9.wav",
+    F3: "Classic_Kick_1.wav",
+      G3: "Classic_Kick_10.wav",
+      A3: "Classic_Kick_3.wav",
+      B3: "Classic_Kick_6.wav",
+      C4: "Classic_Kick_7.wav",
+      D4: "Classic_Snare_1.wav",
+      E4: "Classic_Snare_3.wav",
+      F4: "Classic_Snare_4.wav",
+      G4: "Classic_Tambrine_1.wav",
+      A4: "Classic_Tambrine_2.wav"
+  },
+  baseUrl: "../sounds/final/",
+  onload: () => {
+    console.log("✅ Sampler vollständig geladen");
+    pullInstruments();  // erst hier aufrufen!
+  }
+}).toDestination();
+
 
 //const scaleOfNotes = [ 'C1','D1', 'A1', 'E2', 'E1', 'G1', 'F2', 'F1',];
 
-const scaleOfNotes = [
+/*const scaleOfNotes = [
   'C1', 'D1', 'A1', 'E2', 'E1', 'G1', 'F2', 'F1',
   'B1', 'C2', 'D2', 'F3', 'G2', 'A2', 'B2',
   'C3', 'D3', 'E3', 'F3', 'G3', 'A3', 'B3',
   'C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4'
+];*/
+
+const scaleOfNotes = [
+  'C1', 'D1', 'A1', 'E2', 'E1', 'G1', 'F2', 'F1',
+  'B1', 'C2', 'D2', 'G2',
+  'A2', 'B2', 'C3', 'D3', 'E3',
+  'F3', 'G3', 'A3', 'B3', 'C4',
+  'D4', 'E4', 'F4', 'G4', 'A4'
 ];
+
 
 
   
@@ -173,12 +260,22 @@ let rows =[
     Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[0], active: false}))
 ]
 
-for(let i = 0; i<rows.length;i++){
-    console.log( document.getElementsByClassName('rowLabel')[i]);
-    console.log(scaleOfNotes[i]);
+
+//pullInstruments();
+
+//nameRows();
+function nameRows(){
+for(let i = 0; i<8;i++){
+    //console.log( document.getElementsByClassName('rowLabel')[i]);
+    //console.log(scaleOfNotes[i]);
     
     
     document.getElementsByClassName('rowLabel')[i].innerHTML = `<p>${ rowNames[i]}</p>`
+}
+
+for(let j = 0; j< rows.length -8;j++){
+     document.getElementsByClassName('rowLabel')[j+8].innerHTML = `<p>${ rowNames[boughtItems[j]+8]}</p>`
+}
 }
 
 
@@ -205,8 +302,13 @@ Tone.Transport.scheduleRepeat(time => {
         
 
         if(note.active){
+            //if(sampler._buffers.has(note.note)){
              console.log(note);
             sampler.triggerAttackRelease(note.note,"16n",time)//synth
+           /* }else{
+                console.log("Ungültige Note: ", note.note);
+                
+            }*/
             
         }  
          
@@ -231,11 +333,13 @@ document.getElementsByClassName("notes")[row*16 + note].classList.add("active");
 }
 }
 
-
-for(let r = 0; r<8;r++){
+updateEventListeners();
+function updateEventListeners(){
+for(let r = 0; r<rows.length;r++){
     for(let n= 0; n<16;n++){
         document.getElementsByClassName("notes")[r*16 + n].addEventListener("click",()=>{notePressed(r,n)})
     }
+}
 }
 
 //document.getElementById("playButton").addEventListener("click", (isPlaying)?pausePlay:startPlay)
@@ -348,8 +452,28 @@ function loadBeat(index){
 }
 function updateSEQ(){
 
+    let m = "";
+
+    m+='<div id="SEQ_Container">'
+
+    for(let r = 0; r<rows.length;r++){
+      m+=`<div class="rowLabel"></div>
+      `
+      for(let n= 0; n<16;n++){
+        m+=`
+        <div class="notes ${ n%4 ? '':'firstBeatOfBar'} " ></div>
+        `
+      }
+
+    }
+    m+='</div>'
+
+    document.getElementById('main').innerHTML = m;
+
+
+
     for(let note = 0; note < 16; note++){
-        for(let row = 0; row < 8; row++){
+        for(let row = 0; row < rows.length; row++){
             if(rows[row][note].active){
                 document.getElementsByClassName("notes")[row*16 + note].classList.add("active");
             }else{
@@ -357,6 +481,8 @@ function updateSEQ(){
             }
         }
     }
+
+    //nameRows();
    
 }
 
@@ -403,8 +529,14 @@ function updateRating(val){
 document.getElementById('ratingDisplay').innerHTML = val + " / 5";
 }
 
+
+
+
+
+
+
 function pullInstruments(){
-    let boughtItems = JSON.parse(localStorage.getItem('boughtItems')) ?? [];
+    boughtItems = JSON.parse(localStorage.getItem('boughtItems')) ?? [];
 
     console.log("Item pull: ", boughtItems);
     
@@ -415,9 +547,13 @@ function pullInstruments(){
 }
 function addInstrument(boughtItems){
     for(let i = 0; i<boughtItems.length;i++){
-        rows.push( Array.from({length: 16}, (_,i) => ({note: scaleOfNotes[boughtItems[i] + 8], active: false})))
+        rows.push( Array.from({length: 16}, (_,j) => ({note: scaleOfNotes[boughtItems[i] + 8], active: false})))
         num_rows++;
 
 
     }
+    updateSEQ();
+    updateEventListeners();
+    nameRows();
+    
 }
