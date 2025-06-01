@@ -113,10 +113,11 @@ const rowNames = [
   'CP',
   '808',
 
-  'hiHat1',
+  'hiHat o',
   'Maracas',
   'Rim',
   'Conga',
+  'hiHat1',
   'hiHat2',
   'hiHat3',
   'hiHat4',
