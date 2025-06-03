@@ -360,14 +360,14 @@ function startPlay(){
     Tone.Transport.bpm.value = bpm;
     Tone.Transport.start();
     isPlaying = true;
-    document.getElementById("playButton").innerHTML = '<img src="../img/pauseButton.png">'
+    document.getElementById("playButton").innerHTML = '<img src="../img/pauseButton2.png">'
 
    
 }
 function pausePlay(){
     Tone.Transport.stop();
     isPlaying = false;
-    document.getElementById("playButton").innerHTML = '<img src="../img/playButton.svg">'
+    document.getElementById("playButton").innerHTML = '<img src="../img/playButton2.png">'
 }
 
 function clearBeat(){
@@ -429,7 +429,7 @@ function saveInfo(){
     closeSavingOptions();
 
 }
-checkURL();
+//checkURL();
 function checkURL(){
     let params = new URLSearchParams(window.location.search);
     if(params.has('index')){
@@ -555,6 +555,8 @@ function addInstrument(boughtItems){
     }
     updateSEQ();
     updateEventListeners();
+    checkURL();
     nameRows();
+    
     
 }

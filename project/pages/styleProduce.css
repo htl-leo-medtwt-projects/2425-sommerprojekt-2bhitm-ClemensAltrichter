@@ -38,6 +38,7 @@ body{
 #header{
     height: 15vh;
     background-color: var(--secondColor   );
+background-image: linear-gradient(rgba(41, 41, 47,0.5), rgba(235, 234, 229,0.3));
     display: flex;
     justify-content:center ;
     gap: 10vw;
@@ -49,8 +50,9 @@ body{
     display: inline-flex;
     align-items: center;
 
-    top: 1vh;
-    left: 1vh;
+    top: 7,5vh;
+    left: 5vw;
+    transform: translate(-50%, -50%);
 }
 #polygon1{
     position: relative;
@@ -79,7 +81,7 @@ margin: 0 auto;
 
 #playButton{
     overflow: hidden;
-    height: 5vh;
+    height: 7.5vh;
 }
 #playButton img{
     height: 100%;

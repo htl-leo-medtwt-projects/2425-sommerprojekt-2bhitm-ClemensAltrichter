@@ -3,8 +3,8 @@ const polygonData={
       polygons: [
         {
           id: "polygon1",
-          width: 30,
-          height: 40,
+          width: 45,
+          height: 55,
           viewBox: "0 0 68 78",
           path: {
             d: "M0 39L67.5 0.0288544V77.9711L0 39Z",
@@ -13,8 +13,8 @@ const polygonData={
         },
         {
           id: "polygon2",
-          width: 35,
-          height: 45,
+          width: 55,
+          height: 65,
           viewBox: "0 0 75 88",
           path: {
             d: "M74.5 86.4352L1 44L74.5 1.56476V86.4352Z",
@@ -59,7 +59,7 @@ h+=`
             </div>
             
             <div id="playButton">
-              <img src="../img/playButton.svg">
+              <img src="../img/playButton2.png">
             </div>
 
             <div id="headerBTNContainer">
