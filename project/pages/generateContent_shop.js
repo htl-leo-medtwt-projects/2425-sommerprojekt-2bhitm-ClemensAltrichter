@@ -51,7 +51,8 @@ const shopPageData = {
             `).join('')}
           </div>
         </a>
-        ${data.sideMenu.menuOptions.map(opt => `<h1>${opt}</h1>`).join('')}
+       <!-- ${data.sideMenu.menuOptions.map(opt => `<h1>${opt}</h1>`).join('')} -->
+        <p id="sideDescription">The shop page allows you to browse and purchase new instruments or features for your music project. Your current currency balance is displayed at the top. Use the menu to explore different options and return to the main page at any time. All available items and categories will appear in the main area, making it easy to upgrade your creative toolkit.</p>
       </div>
   
       <div id="mainContainer">

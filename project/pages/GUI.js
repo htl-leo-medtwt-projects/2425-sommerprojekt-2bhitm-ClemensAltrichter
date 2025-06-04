@@ -13,31 +13,14 @@ function switchLibraryHeader(){
     //adding: <div class="libCol" id="libCol_base" onclick="changeLibraryBackground('rgba(235, 234, 229)','rgba(13, 3, 51)"></div>
     //and: <div class="cardCol" id="cardCol_base" onclick="changeCardBackground('rgba(235, 234, 229)','rgba(13, 3, 51)')"></div>
     document.getElementById('header').innerHTML=`
-    <div id="sortBox" class="headerSettingBox">
-
-    <div class="headerInnerBox">
-    <label for="sort">Sort by: </label>
-        <select name="sort" id="sortInput">
-            <option value="youngest">Youngest</option>
-            <option value="oldest">Oldest</option>
-            <option value="rating">Rating</option>
-        </select>
-    </div>
-
-    <div class="headerInnerBox">
-    <label for="nameInput">Search for Name: </label>
-        <input type="text" placeholder="Song 1" name="nameInput" id="nameInput">    
-
-    </div>
-
-    </div>
+    
      <div id="libraryColorBox" class="headerSettingBox">
 
      <p>Library Color: </p>
      <div id="colorsContainer">
         <div class="libCol" id="libCol_blue" onclick="changeLibraryBackground('#0000b3','#000099')"></div>
         <div class="libCol" id="libCol_red" onclick="changeLibraryBackground('#b30000','#800000')"></div>
-         <div class="libCol" id="libCol_grey" onclick="changeLibraryBackground('#29293f','#29292f')"></div>
+         <div class="libCol" id="libCol_grey" onclick="changeLibraryBackground('#EBEAE5','#EBEAE5')"></div>
         
     </div>
 

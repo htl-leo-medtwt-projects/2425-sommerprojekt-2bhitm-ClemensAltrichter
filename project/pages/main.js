@@ -210,11 +210,11 @@ const sampler = new Tone.Sampler({
       C3: "Classic_Hat_3.wav",
       D3: "Classic_Hat_6.wav",
       E3: "Classic_Hat_9.wav",
-    F3: "Classic_Kick_1.wav",
-      G3: "Classic_Kick_10.wav",
-      A3: "Classic_Kick_3.wav",
-      B3: "Classic_Kick_6.wav",
-      C4: "Classic_Kick_7.wav",
+      F3: "Studio_Kick_1.wav",
+      G3: "Studio_Kick_7.wav",
+      A3: "Studio_Kick_15.wav",
+      B3: "Studio_Kick_26.wav",
+      C4: "Studio_Kick_33.wav",
       D4: "Classic_Snare_1.wav",
       E4: "Classic_Snare_3.wav",
       F4: "Classic_Snare_4.wav",
@@ -442,14 +442,20 @@ function checkURL(){
 }
 
 function loadBeat(index){
-    rows = JSON.parse(localStorage.getItem('savedBeat'))[index];
+  let tempRows = JSON.parse(localStorage.getItem('savedBeat'))[index];
+  for(let i = 0; i<tempRows.length;i++){
+    rows[i] = tempRows[i]
+  }
+    //rows = JSON.parse(localStorage.getItem('savedBeat'))[index];
     console.log(JSON.parse(localStorage.getItem('savedBeat'))[index]);
     
     /*
     synths = JSON.parse(localStorage.getItem('savedSynths'))[index];
     scaleOfNotes = JSON.parse(localStorage.getItem('savedNotes'))[index];
     */
+   
    updateSEQ();
+   updateEventListeners();
 }
 function updateSEQ(){
 
@@ -545,6 +551,9 @@ function pullInstruments(){
     if(boughtItems.length > 0){
         addInstrument(boughtItems);
     }
+    ;
+    checkURL();
+    nameRows();
 }
 function addInstrument(boughtItems){
     for(let i = 0; i<boughtItems.length;i++){

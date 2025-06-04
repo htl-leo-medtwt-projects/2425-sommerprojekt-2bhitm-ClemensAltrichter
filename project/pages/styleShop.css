@@ -80,7 +80,7 @@
     #sideMenu{
         position: fixed;
         background-image: linear-gradient(#29293f,#29292f);
-        width: 30vw;
+        width: 20vw;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -114,12 +114,19 @@
         text-decoration: underline;
     }
 
+    #sideDescription{
+        
+        font-family: Mono;
+        color: var(--backgroundColor);
+        text-align: center;
+        padding: 0 2vw;
+    }
     #mainContainer{
         border-top: #29292F 1vh solid;
-        width: 70vw;
+        width: 80vw;
         height: 85vh;
         
-        margin-left: 30vw;
+        margin-left: 20vw;
         margin-top: 15vh;
     }
     #content{
