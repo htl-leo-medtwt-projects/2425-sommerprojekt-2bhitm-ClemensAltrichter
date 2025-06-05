@@ -175,6 +175,13 @@ background-color: rgb(34, 34, 158);
     align-items: center;
 }
 
+#savingOptionsContainer input{
+font-family: Mono;
+    font-size: xx-large;
+    background-color: var(--secondColor);
+    color: var(--backgroundColor);
+}
+
 #BTNContainer{
 display: flex;
 justify-content: center;
